@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotEnv = require("dotenv");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// const path = require("path");
+const path = require("path");
 
 
 app.use(cors());
@@ -40,7 +40,7 @@ mongoose
   })
   .catch((error) => {
     console.error(error);
-    process.exit(1); // stop the process if unable to connect to mongodb
+    process.exit(1); 
   });
 
 
@@ -49,7 +49,11 @@ app.use("/api/users", require("./router/userRouter"));
 app.use("/api/posts", require("./router/postRouter"));
 app.use("/api/profiles", require("./router/profileRouter"));
 
-
+// access static file from client devhub
+app.use(express.static(path.join(__dirname,'./Devhub-main/build')));
+app.get('*',function (req, res) {
+  res.sendFile(path.join(__dirname,'./Devhub-main/build/index.html'));
+});
 app.listen(port, () => {
   console.log(`Express Server is Started at PORT : ${port}`);
 });

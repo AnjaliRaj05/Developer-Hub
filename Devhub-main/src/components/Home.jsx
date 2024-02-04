@@ -14,7 +14,7 @@ let Home = () => {
       <div className="landing-page">
         <div className="wrapper">
           <div className="d-flex flex-column justify-content-center align-items-center text-center h-100">
-            <h5 className="display-4 animated zoomIn">Dev-Room</h5>
+            <h5 className="display-4 animated zoomIn">DevHub-Room</h5>
             <p className="animated zoomIn">
               A website for developers where they can post their works, update
               profile and connect to other developers accross the globe
