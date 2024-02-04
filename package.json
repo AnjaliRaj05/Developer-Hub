@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "index": "nodemon index.js",
     "Devhub-main": "cd Devhub-main && npm start",
-    "dev": "concurrently \"npm run index\" \"npm run Devhub-main\""
+    "dev": "concurrently \"npm start\" \"npm run Devhub-main\""
   },
   "keywords": [],
   "author": "",
